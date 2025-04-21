@@ -1,65 +1,57 @@
-# Hotel_Mangment_System
-A simple hotel management system in C that tracks room availability, customer check-ins/outs, and calculates bills. The system reads and writes data to files, allowing it to store customer information and track total profits over time.
+Hotel Room Management System
+  This is a Hotel Room Management System written in C that allows customers to book, modify, and delete room reservations. The system handles different room types, adjusts     prices based on packages and discounts, and offers functionalities for managing room occupancy and customer bookings.
 
-The code implements a hotel room management system where customers can book, modify, or delete rooms. The system handles different room types (single, double, triple, and suites) with varying prices and offers business discounts for eligible customers.
+Features
+1. Display Room Information
+  The system displays a list of all available rooms and their details, including room price, occupancy status, and customer information. If the room is occupied, the       
+  customer's name and ID are shown, along with any business discounts applied.
 
-Main Features:
-Display Room Information (Display_Rooms):
+2. Delete Room
+  Customers can delete a room reservation. If multiple rooms have been booked, the system prompts the user to select which room to delete. The price is adjusted based on the   room type and the package selected.
 
-The function iterates over all rooms and prints details such as room price, occupancy, and customer information.
+3. Delete Customer
+  Deletes all rooms booked by a specific customer, resets room information (such as price and occupancy), and removes any packages associated with the booking.
 
-For occupied rooms, it displays the customer's name and ID, as well as the applicable business discount.
+4. Change Room
+  Allows customers to change their current room. The program verifies if the selected room is available, and updates the customer's total fee accordingly. Business customers 
+  receive a discount when changing to an eligible room.
 
-Delete Room (Delete_Room):
-
-Allows a customer to delete a room reservation.
-
-The function prompts for the room number if the customer has booked multiple rooms. The price is adjusted based on the room type and any packages selected (breakfast, half-board, or all-inclusive).
-
-The system removes the room booking and adjusts the customer's total charges accordingly.
-
-Delete Customer (Delete_Customer):
-
-Deletes all rooms booked by a specific customer and resets the room and customer details.
-
-The function resets room prices and occupancy statuses and removes any assigned packages.
-
-Change Room (Change_Room):
-
-Customers can switch rooms based on available room types and prices.
-
-The program verifies if the room is available and updates the customer's total price accordingly.
-
-Business customers get a discount when changing to eligible rooms.
-
-Change Package (Change_Package):
-
-Allows customers to change the package associated with their room (e.g., breakfast only, half-board, or all-inclusive).
-
-The room price is updated based on the new package, and the customer's total price is adjusted accordingly.
+5. Change Package
+  Customers can change the package associated with their room, such as "breakfast only", "half board", or "all-inclusive". The price of the room is updated based on the     
+  selected package, and the customer's total price is adjusted.
 
 Pricing Logic:
-Room prices are based on the type: Single ($100), Double ($150), Triple ($200), and Suite ($250).
 
-Business customers receive a 20% discount.
+Room Types and Prices:
+  Single Room: $100
+  Double Room: $150
+  Triple Room: $200
+  Suite: $250
 
-Package prices are deducted from the customer’s fee when changing:
+Business Discount:
+  Business customers receive a 20% discount on room prices.
 
-Breakfast only: $5
+Package Prices:
+  Breakfast Only: $5
+  Half Board: $10
+  All-Inclusive: $15
 
-Half board: $10
+Price Adjustments:
+  When changing rooms or packages, the total customer price is recalculated based on the new room and package selections.
 
-All-inclusive: $15
+Error Handling
+  Input validation is performed for room selections, package choices, and customer IDs.
+  The system ensures that rooms are available before confirming any booking or modification.
+  If the user attempts to book or modify an already occupied room, the system will provide an error message.
 
-Error Handling:
-The system validates user input when selecting room types, numbers, and packages.
+Usage:
+  Clone the repository:
+    git clone https://github.com/AhmedAdelMohamedAbouhussein/Hotel_Mangment_System.git
 
-The program checks for available rooms before confirming any changes and ensures the customer doesn't attempt to book or modify a room that's already occupied.
-
-Key Considerations:
-The system assumes a maximum of 100 rooms and 100 customers.
-
-The room prices and packages can be modified based on user interaction, with clear feedback if invalid choices are made.
-
-This system offers an intuitive interface for managing room bookings, providing flexibility in managing customer reservations and room assignments with real-time price adjustments.
-
+  Compile the program:
+    gcc -o hotel_management hotel_management.c
+    
+  Run the program:
+  ./hotel_management
+  
+Follow the on-screen prompts to book, change, or delete rooms, as well as to modify packages.
