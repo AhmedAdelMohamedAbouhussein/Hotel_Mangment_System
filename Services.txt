@@ -1,0 +1,7 @@
+1. Book Room
+2. Available Rooms
+3. Edit Room
+4. List Rooms
+5. Delete Room
+6. Delete Customer
+7. Exit

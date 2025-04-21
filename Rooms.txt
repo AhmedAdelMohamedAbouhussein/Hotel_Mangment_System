@@ -1,0 +1,4 @@
+1-Single Room     $100
+2-Double Room     $150
+3-Triple Room     $200
+4-Suite           $250
